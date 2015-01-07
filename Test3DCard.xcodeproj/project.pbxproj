@@ -14,6 +14,7 @@
 		6D3277FD1A45AE2D0033228B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D3277FC1A45AE2D0033228B /* Images.xcassets */; };
 		6D3278001A45AE2D0033228B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D3277FE1A45AE2D0033228B /* LaunchScreen.xib */; };
 		6D32780C1A45AE2D0033228B /* Test3DCardTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D32780B1A45AE2D0033228B /* Test3DCardTests.m */; };
+		6D6259631A4EE11A00ADC646 /* DeckViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D6259621A4EE11A00ADC646 /* DeckViewController.m */; };
 		6DCE200B1A4AEDE600219E88 /* RotatableDeckView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DCE200A1A4AEDE600219E88 /* RotatableDeckView.m */; };
 		6DCE200E1A4AEF1B00219E88 /* RotatableCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DCE200D1A4AEF1B00219E88 /* RotatableCardView.m */; };
 /* End PBXBuildFile section */
@@ -42,6 +43,8 @@
 		6D3278051A45AE2D0033228B /* Test3DCardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Test3DCardTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D32780A1A45AE2D0033228B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6D32780B1A45AE2D0033228B /* Test3DCardTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Test3DCardTests.m; sourceTree = "<group>"; };
+		6D6259611A4EE11A00ADC646 /* DeckViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeckViewController.h; sourceTree = "<group>"; };
+		6D6259621A4EE11A00ADC646 /* DeckViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeckViewController.m; sourceTree = "<group>"; };
 		6DCE20091A4AEDE600219E88 /* RotatableDeckView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RotatableDeckView.h; sourceTree = "<group>"; };
 		6DCE200A1A4AEDE600219E88 /* RotatableDeckView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RotatableDeckView.m; sourceTree = "<group>"; };
 		6DCE200C1A4AEF1B00219E88 /* RotatableCardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RotatableCardView.h; sourceTree = "<group>"; };
@@ -99,6 +102,8 @@
 				6DCE200A1A4AEDE600219E88 /* RotatableDeckView.m */,
 				6DCE200C1A4AEF1B00219E88 /* RotatableCardView.h */,
 				6DCE200D1A4AEF1B00219E88 /* RotatableCardView.m */,
+				6D6259611A4EE11A00ADC646 /* DeckViewController.h */,
+				6D6259621A4EE11A00ADC646 /* DeckViewController.m */,
 			);
 			path = Test3DCard;
 			sourceTree = "<group>";
@@ -232,6 +237,7 @@
 				6DCE200E1A4AEF1B00219E88 /* RotatableCardView.m in Sources */,
 				6D3277F81A45AE2D0033228B /* ViewController.m in Sources */,
 				6DCE200B1A4AEDE600219E88 /* RotatableDeckView.m in Sources */,
+				6D6259631A4EE11A00ADC646 /* DeckViewController.m in Sources */,
 				6D3277F51A45AE2D0033228B /* AppDelegate.m in Sources */,
 				6D3277F21A45AE2D0033228B /* main.m in Sources */,
 			);

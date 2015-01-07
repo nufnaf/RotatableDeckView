@@ -10,46 +10,66 @@
 
 @interface RotatableDeckView ()
 
+@property (nonatomic, strong) NSMutableDictionary *reusableIdentifier2CardView;
 @property (nonatomic, strong) NSMutableArray *cardViews;
 @property (nonatomic, strong) NSMutableArray *initialTransformsOfCardViews;
 @property (nonatomic, assign) NSUInteger numberOfCardViews;
 @property (nonatomic, assign) CATransform3D remoteCardViewTransform;
-@property (nonatomic, strong) UIView *viewToBeRemovedFromTop;
+@property (nonatomic, assign) NSUInteger currentCardViewIndex;
 
 @end
 
 @implementation RotatableDeckView
 
+- (instancetype)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        self.cardViews = [NSMutableArray array];
+        self.initialTransformsOfCardViews = [NSMutableArray array];
+    }
+    return self;
+}
+
+
 #pragma mark - public methods
 
 - (void)reloadData
 {
+    [[self subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
+    [self.cardViews removeAllObjects];
+    self.numberOfCardViews = [self.dataSource rotatableDeckViewNumberOfVisibleCardViews:self];
+    self.currentCardViewIndex = self.numberOfCardViews - 1;
     NSUInteger i = 0;
-    for (i= 0; i < [self.dataSource rotatableDeckViewNumberOfCardViews:self]; i++) {
+    for (i= 0; i < self.numberOfCardViews; i++) {
         RotatableCardView *cardView = [self.dataSource rotatableDeckView:self cardViewForIndex:i];
+        if (i == 0) {
+            [self addSubview:cardView];
+        } else {
+            [self insertSubview:cardView belowSubview:self.cardViews.lastObject];
+        }
+        [self addCardView:cardView];
         
         CATransform3D t = CATransform3DIdentity;
         t.m34 = 1.0f / - 1000.0f;
         t = CATransform3DTranslate(t, 2.0f * i, -6.0f * 2 * i,  -10.0f * 2 * i);
         cardView.layer.transform = t;
         [self.initialTransformsOfCardViews addObject:[NSValue valueWithCATransform3D:t]];
-        
-        cardView.rotateAnimationCompletionBlock = ^(){
-            [self insertSubview:self.viewToBeRemovedFromTop belowSubview:self.cardViews[self.numberOfCardViews - 1]];
-            [self.cardViews removeObject:self.viewToBeRemovedFromTop];
-            [self.cardViews addObject:self.viewToBeRemovedFromTop];
-            
-            for (NSUInteger i = 0; i < self.cardViews.count - 1; i++) {
-                [self moveViewUpward:self.cardViews[i] animated:YES];
-            }
-            [self moveViewToBottom:self.viewToBeRemovedFromTop animated:YES];
-        };
+        cardView.rotateAnimationCompletionBlock = [self cardViewRotationCompletionBlockWith:cardView];
     }
     CATransform3D t = CATransform3DIdentity;
     t = CATransform3DIdentity;
     t.m34 = 1.0f / - 1000.0f;
-    t = CATransform3DTranslate(_remoteCardViewTransform, 2.0f * 3, -6.0f * 2 * 3,  -10.0f * 2 * 3);
+    t = CATransform3DTranslate(_remoteCardViewTransform, 2.0f * i, -6.0f * 2 * i,  -10.0f * 2 * i);
     self.remoteCardViewTransform = t;
+}
+
+- (RotatableCardView *)dequeueReusableCellsWithIdentifier:(NSString *)identifier
+{
+    NSMutableArray *reusableQueue = self.reusableIdentifier2CardView[identifier];
+    RotatableCardView *cardView = reusableQueue.firstObject;
+    [reusableQueue removeObject:cardView];
+    return cardView;
 }
 
 
@@ -99,5 +119,47 @@
     }
     view.layer.transform = t;
 }
+
+- (RotateAnimationCompletionBlock)cardViewRotationCompletionBlockWith:(RotatableCardView *)cardView
+{
+    __weak typeof(self) weakSelf = self;
+    __weak typeof(cardView) weakCardView = cardView;
+    RotateAnimationCompletionBlock block = ^(){
+        if (weakCardView.reusableIdentifier.length) {
+            NSMutableArray *reusableQueue = self.reusableIdentifier2CardView[weakCardView.reusableIdentifier];
+            if (!reusableQueue) {
+                reusableQueue = [NSMutableArray array];
+                [self.reusableIdentifier2CardView setObject:reusableQueue forKey:weakCardView.reusableIdentifier];
+            }
+            [reusableQueue addObject:weakCardView];
+        }
+        [weakSelf.cardViews removeObject:weakCardView];
+        
+        
+        for (NSUInteger i = 0; i < weakSelf.cardViews.count; i++) {
+            [weakSelf moveViewUpward:weakSelf.cardViews[i] animated:YES];
+        }
+        if (weakSelf.currentCardViewIndex + 1 < [weakSelf.dataSource rotatableDeckViewNumberOfCardViews:weakSelf]) {
+            RotatableCardView *nextCardView = [weakSelf.dataSource rotatableDeckView:weakSelf cardViewForIndex:weakSelf.currentCardViewIndex + 1];
+            [weakSelf insertSubview:nextCardView belowSubview:self.cardViews.lastObject];
+            [weakSelf addCardView:nextCardView];
+            [weakSelf moveViewToBottom:nextCardView animated:YES];
+        }
+        
+        weakSelf.currentCardViewIndex++;
+    };
+    return block;
+}
+
+- (void)addCardView:(RotatableCardView *)cardView
+{
+    [self.cardViews addObject:cardView];
+    
+    CGRect originalCardViewFrame = cardView.frame;
+    cardView.layer.anchorPoint = CGPointMake(0, 1);
+    cardView.frame = originalCardViewFrame;
+    cardView.rotateAnimationCompletionBlock = [self cardViewRotationCompletionBlockWith:cardView];
+}
+
 
 @end

@@ -13,5 +13,6 @@ typedef void(^RotateAnimationCompletionBlock)();
 @interface RotatableCardView : UIView
 
 @property (nonatomic, strong) RotateAnimationCompletionBlock rotateAnimationCompletionBlock;
+@property (nonatomic, strong) NSString *reusableIdentifier;
 
 @end

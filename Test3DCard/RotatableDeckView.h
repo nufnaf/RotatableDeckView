@@ -13,6 +13,7 @@
 @protocol RotatableDeckViewDataSource <NSObject>
 
 - (NSUInteger)rotatableDeckViewNumberOfCardViews:(RotatableDeckView *)rotatableDeckView;
+- (NSUInteger)rotatableDeckViewNumberOfVisibleCardViews:(RotatableDeckView *)rotatableDeckView;
 - (RotatableCardView *)rotatableDeckView:(RotatableDeckView *)rotatableDeckView cardViewForIndex:(NSUInteger)index;
 
 @end
@@ -21,6 +22,7 @@
 
 @property (nonatomic, weak) id<RotatableDeckViewDataSource> dataSource;
 
+- (RotatableCardView *)dequeueReusableCellsWithIdentifier:(NSString *)identifier;
 - (void)reloadData;
 
 @end
