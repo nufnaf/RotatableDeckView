@@ -27,6 +27,7 @@
     if (self) {
         self.cardViews = [NSMutableArray array];
         self.initialTransformsOfCardViews = [NSMutableArray array];
+        self.reusableIdentifier2CardView = [NSMutableDictionary dictionary];
     }
     return self;
 }
@@ -141,6 +142,7 @@
         }
         if (weakSelf.currentCardViewIndex + 1 < [weakSelf.dataSource rotatableDeckViewNumberOfCardViews:weakSelf]) {
             RotatableCardView *nextCardView = [weakSelf.dataSource rotatableDeckView:weakSelf cardViewForIndex:weakSelf.currentCardViewIndex + 1];
+            nextCardView.layer.transform = CATransform3DIdentity;
             [weakSelf insertSubview:nextCardView belowSubview:self.cardViews.lastObject];
             [weakSelf addCardView:nextCardView];
             [weakSelf moveViewToBottom:nextCardView animated:YES];

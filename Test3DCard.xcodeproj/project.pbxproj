@@ -15,6 +15,17 @@
 		6D3278001A45AE2D0033228B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D3277FE1A45AE2D0033228B /* LaunchScreen.xib */; };
 		6D32780C1A45AE2D0033228B /* Test3DCardTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D32780B1A45AE2D0033228B /* Test3DCardTests.m */; };
 		6D6259631A4EE11A00ADC646 /* DeckViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D6259621A4EE11A00ADC646 /* DeckViewController.m */; };
+		6DC9FB591A64AE6A00676976 /* CardsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DC9FB581A64AE6A00676976 /* CardsViewController.m */; };
+		6DC9FB651A64B36600676976 /* 0.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DC9FB5B1A64B36600676976 /* 0.png */; };
+		6DC9FB661A64B36600676976 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DC9FB5C1A64B36600676976 /* 1.png */; };
+		6DC9FB671A64B36600676976 /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DC9FB5D1A64B36600676976 /* 2.png */; };
+		6DC9FB681A64B36600676976 /* 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DC9FB5E1A64B36600676976 /* 3.png */; };
+		6DC9FB691A64B36600676976 /* 4.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DC9FB5F1A64B36600676976 /* 4.png */; };
+		6DC9FB6A1A64B36600676976 /* 5.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DC9FB601A64B36600676976 /* 5.png */; };
+		6DC9FB6B1A64B36600676976 /* 6.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DC9FB611A64B36600676976 /* 6.png */; };
+		6DC9FB6C1A64B36600676976 /* 7.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DC9FB621A64B36600676976 /* 7.png */; };
+		6DC9FB6D1A64B36600676976 /* 8.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DC9FB631A64B36600676976 /* 8.png */; };
+		6DC9FB6E1A64B36600676976 /* 9.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DC9FB641A64B36600676976 /* 9.png */; };
 		6DCE200B1A4AEDE600219E88 /* RotatableDeckView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DCE200A1A4AEDE600219E88 /* RotatableDeckView.m */; };
 		6DCE200E1A4AEF1B00219E88 /* RotatableCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DCE200D1A4AEF1B00219E88 /* RotatableCardView.m */; };
 /* End PBXBuildFile section */
@@ -45,6 +56,18 @@
 		6D32780B1A45AE2D0033228B /* Test3DCardTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Test3DCardTests.m; sourceTree = "<group>"; };
 		6D6259611A4EE11A00ADC646 /* DeckViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeckViewController.h; sourceTree = "<group>"; };
 		6D6259621A4EE11A00ADC646 /* DeckViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeckViewController.m; sourceTree = "<group>"; };
+		6DC9FB571A64AE6A00676976 /* CardsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardsViewController.h; sourceTree = "<group>"; };
+		6DC9FB581A64AE6A00676976 /* CardsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardsViewController.m; sourceTree = "<group>"; };
+		6DC9FB5B1A64B36600676976 /* 0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 0.png; sourceTree = "<group>"; };
+		6DC9FB5C1A64B36600676976 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
+		6DC9FB5D1A64B36600676976 /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
+		6DC9FB5E1A64B36600676976 /* 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3.png; sourceTree = "<group>"; };
+		6DC9FB5F1A64B36600676976 /* 4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4.png; sourceTree = "<group>"; };
+		6DC9FB601A64B36600676976 /* 5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 5.png; sourceTree = "<group>"; };
+		6DC9FB611A64B36600676976 /* 6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 6.png; sourceTree = "<group>"; };
+		6DC9FB621A64B36600676976 /* 7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 7.png; sourceTree = "<group>"; };
+		6DC9FB631A64B36600676976 /* 8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 8.png; sourceTree = "<group>"; };
+		6DC9FB641A64B36600676976 /* 9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 9.png; sourceTree = "<group>"; };
 		6DCE20091A4AEDE600219E88 /* RotatableDeckView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RotatableDeckView.h; sourceTree = "<group>"; };
 		6DCE200A1A4AEDE600219E88 /* RotatableDeckView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RotatableDeckView.m; sourceTree = "<group>"; };
 		6DCE200C1A4AEF1B00219E88 /* RotatableCardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RotatableCardView.h; sourceTree = "<group>"; };
@@ -90,6 +113,7 @@
 		6D3277EE1A45AE2D0033228B /* Test3DCard */ = {
 			isa = PBXGroup;
 			children = (
+				6DC9FB5A1A64B36600676976 /* images */,
 				6D3277F31A45AE2D0033228B /* AppDelegate.h */,
 				6D3277F41A45AE2D0033228B /* AppDelegate.m */,
 				6D3277F61A45AE2D0033228B /* ViewController.h */,
@@ -104,6 +128,8 @@
 				6DCE200D1A4AEF1B00219E88 /* RotatableCardView.m */,
 				6D6259611A4EE11A00ADC646 /* DeckViewController.h */,
 				6D6259621A4EE11A00ADC646 /* DeckViewController.m */,
+				6DC9FB571A64AE6A00676976 /* CardsViewController.h */,
+				6DC9FB581A64AE6A00676976 /* CardsViewController.m */,
 			);
 			path = Test3DCard;
 			sourceTree = "<group>";
@@ -132,6 +158,23 @@
 				6D32780A1A45AE2D0033228B /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6DC9FB5A1A64B36600676976 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				6DC9FB5B1A64B36600676976 /* 0.png */,
+				6DC9FB5C1A64B36600676976 /* 1.png */,
+				6DC9FB5D1A64B36600676976 /* 2.png */,
+				6DC9FB5E1A64B36600676976 /* 3.png */,
+				6DC9FB5F1A64B36600676976 /* 4.png */,
+				6DC9FB601A64B36600676976 /* 5.png */,
+				6DC9FB611A64B36600676976 /* 6.png */,
+				6DC9FB621A64B36600676976 /* 7.png */,
+				6DC9FB631A64B36600676976 /* 8.png */,
+				6DC9FB641A64B36600676976 /* 9.png */,
+			);
+			path = images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -214,9 +257,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6DC9FB6E1A64B36600676976 /* 9.png in Resources */,
+				6DC9FB6D1A64B36600676976 /* 8.png in Resources */,
+				6DC9FB6C1A64B36600676976 /* 7.png in Resources */,
+				6DC9FB691A64B36600676976 /* 4.png in Resources */,
+				6DC9FB671A64B36600676976 /* 2.png in Resources */,
+				6DC9FB651A64B36600676976 /* 0.png in Resources */,
+				6DC9FB6A1A64B36600676976 /* 5.png in Resources */,
+				6DC9FB6B1A64B36600676976 /* 6.png in Resources */,
 				6D3277FB1A45AE2D0033228B /* Main.storyboard in Resources */,
 				6D3278001A45AE2D0033228B /* LaunchScreen.xib in Resources */,
 				6D3277FD1A45AE2D0033228B /* Images.xcassets in Resources */,
+				6DC9FB681A64B36600676976 /* 3.png in Resources */,
+				6DC9FB661A64B36600676976 /* 1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,6 +292,7 @@
 				6DCE200B1A4AEDE600219E88 /* RotatableDeckView.m in Sources */,
 				6D6259631A4EE11A00ADC646 /* DeckViewController.m in Sources */,
 				6D3277F51A45AE2D0033228B /* AppDelegate.m in Sources */,
+				6DC9FB591A64AE6A00676976 /* CardsViewController.m in Sources */,
 				6D3277F21A45AE2D0033228B /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
