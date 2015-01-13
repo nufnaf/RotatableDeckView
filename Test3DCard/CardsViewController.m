@@ -47,11 +47,13 @@
     if (!cardView) {
         cardView = [[RotatableCardView alloc] initWithFrame:rotatableDeckView.bounds];
         cardView.reusableIdentifier = identifier;
+        cardView.backgroundColor = [UIColor whiteColor];
         
         UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 10, cardView.bounds.size.width, 30)];
         label.font = [UIFont systemFontOfSize:16];
         label.textColor = [UIColor blueColor];
         label.tag = 1501030953;
+        label.textAlignment = UITextAlignmentCenter;
         [cardView addSubview:label];
         
         UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 30, cardView.bounds.size.width, cardView.bounds.size.height - 30)];
@@ -61,12 +63,12 @@
         
         [cardView addSubview:imageView];
     }
-//    cardView.frame = rotatableDeckView.bounds;
     UILabel *label = (UILabel *)[cardView viewWithTag:1501030953];
     label.text = self.textArray[index];
 
     UIImageView *imageView = (UIImageView *)[cardView viewWithTag:1501031011];
-    UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"%lu", (unsigned long)index]];
+    NSString *imageFileName = [NSString stringWithFormat:@"%lu.jpg", (unsigned long)index];
+    UIImage *image = [UIImage imageNamed:imageFileName];
     [imageView setImage:image];
     return cardView;
 }
